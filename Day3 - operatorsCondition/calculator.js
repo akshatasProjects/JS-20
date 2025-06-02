@@ -10,7 +10,7 @@ Log the result.
 
 const num1 = Number(prompt("Enter a value for num1"));
 const num2 = Number(prompt("Enter a value for num2"));
-const operator = prompt("Enter a operator( +, -, *, /) :");
+const operator = prompt("Enter a operator( +, -, *, /) :").trim();
 let result;
 
 if (operator === "+") {
@@ -20,9 +20,9 @@ if (operator === "+") {
 } else if (operator === "*") {
   result = num1 * num2;
 } else if (operator === "/") {
-  result = num1 / num2;
+  result = num !== 0 ? num1 / num2 : "Cannot divide by zero";
 } else {
   result = "Invalid Operator";
 }
 
-console.log(` Result is : ${result}`);
+console.log(` Result of ${num1} ${operator} ${num2} is: ${result}`);
